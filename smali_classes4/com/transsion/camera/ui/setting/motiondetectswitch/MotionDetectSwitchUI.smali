@@ -1096,7 +1096,7 @@
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     .line 232
-    if-eqz p1, :cm8guard_mdnull
+    if-eqz p1, :cond_3d
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
@@ -1145,15 +1145,15 @@
     .line 236
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    if-ne v0, p1, :cond_39
+    if-ne v0, p1, :cond_3b
 
     return-void
 
     .line 239
-    :cond_39
+    :cond_3b
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    :cm8guard_mdnull
+    :cond_3d
     return-void
 .end method
 
