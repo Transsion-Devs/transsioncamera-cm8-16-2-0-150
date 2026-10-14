@@ -722,7 +722,7 @@
     :catchall_1e
     move-exception v0
 
-    goto/16 :goto_c9
+    goto/16 :goto_d8
 
     .line 335
     :cond_21
@@ -781,9 +781,24 @@
 
     instance-of v0, v0, Landroid/graphics/SurfaceTexture;
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_64
+
+    iget-object v0, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mAuxSurface:Ljava/lang/Object;
+
+    check-cast v0, Landroid/graphics/SurfaceTexture;
+
+    iget v3, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mAuxPreviewWidth:I
+
+    if-lez v3, :cond_59
+
+    iget v8, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mAuxPreviewHeight:I
+
+    if-lez v8, :cond_59
+
+    invoke-virtual {v0, v3, v8}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
     .line 347
+    :cond_59
     new-instance v0, Landroid/view/Surface;
 
     iget-object v3, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mAuxSurface:Ljava/lang/Object;
@@ -794,18 +809,18 @@
 
     move-object v6, v0
 
-    goto :goto_56
+    goto :goto_65
 
-    :cond_55
+    :cond_64
     move-object v6, v4
 
     .line 349
-    :goto_56
+    :goto_65
     iget-object v0, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mBackgroundSurface:Ljava/lang/Object;
 
     instance-of v0, v0, Landroid/graphics/SurfaceTexture;
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_78
 
     .line 350
     new-instance v0, Landroid/view/Surface;
@@ -820,20 +835,20 @@
 
     move-object v0, v4
 
-    :goto_67
+    :goto_76
     move-object v4, v2
 
-    goto :goto_6c
+    goto :goto_7b
 
-    :cond_69
+    :cond_78
     move-object v0, v4
 
     move-object v7, v0
 
-    goto :goto_67
+    goto :goto_76
 
     .line 352
-    :goto_6c
+    :goto_7b
     new-instance v2, Lcom/transsion/camera/adapter/CameraDataChannel;
 
     iget v3, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mOutputType:I
@@ -843,101 +858,101 @@
     .line 359
     iget-object v9, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mImageSurfaceInfo:Lcom/transsion/camera/app/common/mode/SurfaceInfo;
 
-    if-nez v9, :cond_78
+    if-nez v9, :cond_87
 
     move-object v9, v0
 
-    goto :goto_7c
+    goto :goto_8b
 
-    :cond_78
+    :cond_87
     invoke-virtual {v9}, Lcom/transsion/camera/app/common/mode/SurfaceInfo;->getBGSurface()Lcom/transsion/camera/adapter/IBGSurface;
 
     move-result-object v9
 
     .line 360
-    :goto_7c
+    :goto_8b
     iget-object v10, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mQcomJpegSurfaceInfo:Lcom/transsion/camera/app/common/mode/SurfaceInfo;
 
-    if-nez v10, :cond_82
+    if-nez v10, :cond_91
 
     move-object v10, v0
 
-    goto :goto_86
+    goto :goto_95
 
-    :cond_82
+    :cond_91
     invoke-virtual {v10}, Lcom/transsion/camera/app/common/mode/SurfaceInfo;->getBGSurface()Lcom/transsion/camera/adapter/IBGSurface;
 
     move-result-object v10
 
     .line 361
-    :goto_86
+    :goto_95
     iget-object v11, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mYuvImageSurfaceInfo:Lcom/transsion/camera/app/common/mode/SurfaceInfo;
 
-    if-nez v11, :cond_8c
+    if-nez v11, :cond_9b
 
     move-object v11, v0
 
-    goto :goto_90
+    goto :goto_9f
 
-    :cond_8c
+    :cond_9b
     invoke-virtual {v11}, Lcom/transsion/camera/app/common/mode/SurfaceInfo;->getBGSurface()Lcom/transsion/camera/adapter/IBGSurface;
 
     move-result-object v11
 
     .line 362
-    :goto_90
+    :goto_9f
     iget-object v12, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mThumbnailSurfaceInfo:Lcom/transsion/camera/app/common/mode/SurfaceInfo;
 
-    if-nez v12, :cond_96
+    if-nez v12, :cond_a5
 
     move-object v12, v0
 
-    goto :goto_9a
+    goto :goto_a9
 
-    :cond_96
+    :cond_a5
     invoke-virtual {v12}, Lcom/transsion/camera/app/common/mode/SurfaceInfo;->getSurface()Landroid/view/Surface;
 
     move-result-object v12
 
     .line 363
-    :goto_9a
+    :goto_a9
     iget-object v13, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mFastThumbSurfaceInfo:Lcom/transsion/camera/app/common/mode/SurfaceInfo;
 
-    if-nez v13, :cond_a0
+    if-nez v13, :cond_af
 
     move-object v13, v0
 
-    goto :goto_a4
+    goto :goto_b3
 
-    :cond_a0
+    :cond_af
     invoke-virtual {v13}, Lcom/transsion/camera/app/common/mode/SurfaceInfo;->getSurface()Landroid/view/Surface;
 
     move-result-object v13
 
     .line 364
-    :goto_a4
+    :goto_b3
     iget-object v14, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mPostAlgoSurfaces:[Landroid/view/Surface;
 
-    if-nez v14, :cond_a9
+    if-nez v14, :cond_b8
 
     move-object v14, v0
 
-    :cond_a9
+    :cond_b8
     iget-object v15, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mPostAlgoSensorIds:[I
 
     .line 365
     iget-object v0, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mRawImageSurfaces:[Landroid/view/Surface;
 
-    if-nez v0, :cond_b2
+    if-nez v0, :cond_c1
 
     const/16 v16, 0x0
 
-    goto :goto_b4
+    goto :goto_c3
 
-    :cond_b2
+    :cond_c1
     move-object/from16 v16, v0
 
-    :goto_b4
+    :goto_c3
     iget v0, v1, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mVideoFrameRate:I
 
     move/from16 v17, v0
@@ -955,19 +970,19 @@
     move/from16 v20, v0
 
     invoke-direct/range {v2 .. v20}, Lcom/transsion/camera/adapter/CameraDataChannel;-><init>(ILandroid/view/Surface;Landroid/view/Surface;Landroid/view/Surface;Landroid/view/Surface;Landroid/view/Surface;Lcom/transsion/camera/adapter/IBGSurface;Lcom/transsion/camera/adapter/IBGSurface;Lcom/transsion/camera/adapter/IBGSurface;Landroid/view/Surface;Landroid/view/Surface;[Landroid/view/Surface;[I[Landroid/view/Surface;IIIZ)V
-    :try_end_c7
-    .catchall {:try_start_3 .. :try_end_c7} :catchall_1e
+    :try_end_d6
+    .catchall {:try_start_3 .. :try_end_d6} :catchall_1e
 
     .line 352
     monitor-exit p0
 
     return-object v2
 
-    :goto_c9
-    :try_start_c9
+    :goto_d8
+    :try_start_d8
     monitor-exit p0
-    :try_end_ca
-    .catchall {:try_start_c9 .. :try_end_ca} :catchall_1e
+    :try_end_d9
+    .catchall {:try_start_d8 .. :try_end_d9} :catchall_1e
 
     throw v0
 .end method

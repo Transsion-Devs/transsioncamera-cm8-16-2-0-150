@@ -43,3 +43,51 @@ Confirmed in `pix8.log`: the launched intent was
 
 The fallback only engages when the stock path is unresolvable, so a present
 `com.gallery20` (or Google Photos handling REVIEW) keeps stock behaviour.
+
+## 2. Aux preview freezes (capture session fails with status -22)
+
+### Symptom
+
+Modes that show the auxiliary (secondary) preview freeze it: the aux view stays
+black while the main preview keeps running. `pix8.log`:
+
+```
+[7-aidl-session::configureStreams] Stream{id:1, width:312, height:418, format:0x22 ...}
+checkStream unsupported size 312x418 for format 0x22
+configureStreams, status=-22
+[onConfigureFailed] create photo session
+mSession is null in setRepeatingRequest
+```
+
+### Root cause
+
+The HAL takes the aux stream size from the *producer default buffer size* of the
+`SurfaceTexture` that reaches `createCaptureSession()`:
+`OutputConfiguration.getConfiguredSize()` → `updateCachedSurfaceSize()` →
+`SurfaceUtils.getSurfaceSize()` → `nativeDetectSurfaceDimens()` (i.e.
+`ANativeWindow_getWidth/Height`); the MTK HAL then copies it into
+`streamInfo->width/height` in `Camera3Device.cpp`.
+
+The app asks for 320x240 (`GLSurfaceViewController.setAuxPreviewSize()`) and
+asserts it through `SurfaceTexture.setDefaultBufferSize()` from
+`onSurfaceTextureAvailable()` / `onSurfaceTextureSizeChanged()`. But
+`TextureView` re-points the same producer at its own layout size in
+`getTextureLayer()` (line 480), `onSizeChanged()` (line 458) and the
+`setSurfaceTexture()` path (line 511 of
+`frameworks/base/core/java/android/view/TextureView.java`). The aux view is the
+`preview_aux_ui` `TextureView` (120dp x 160dp = **312x418** at 416dpi), so a late
+layout/draw pass leaves the producer at the view size and the app's re-assert —
+which only runs from TextureView callbacks — already happened. The HAL is then
+asked for an unsupported 312x418 private stream, `configureStreams` fails
+(-22/EINVAL), `mSession` stays null and the aux preview never receives frames.
+
+### Patch
+
+| File | Change |
+|------|--------|
+| `smali_classes3/.../ui/preview/GLSurfaceViewController$MySurfaceTextureListener.smali` | `onSurfaceTextureUpdated()` (previously an empty stub) re-asserts `setDefaultBufferSize(mAuxPreviewWidth, mAuxPreviewHeight)` on every TextureView update, i.e. in the same pass that re-points the buffer, so the clobber is undone within the frame. |
+| `smali_classes3/.../common/mode/CameraOutputSurface.smali` | `requestDataChannel()` re-asserts the same size immediately before `new Surface(mAuxSurface)`, closing the window between the last UI pass and `createCaptureSession()`. |
+
+Both guards are no-ops while `mAuxPreviewWidth/Height` are 0, so devices whose
+aux view size already equals the camera size are unaffected.
+

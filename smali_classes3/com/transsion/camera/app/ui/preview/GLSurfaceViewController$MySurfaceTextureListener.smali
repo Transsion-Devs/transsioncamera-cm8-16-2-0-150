@@ -339,7 +339,26 @@
 .end method
 
 .method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-    .registers 2
+    .registers 4
 
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
+
+    invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmAuxPreviewWidth(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)I
+
+    move-result v0
+
+    if-lez v0, :cond_13
+
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
+
+    invoke-static {v1}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmAuxPreviewHeight(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)I
+
+    move-result v1
+
+    if-lez v1, :cond_13
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
+
+    :cond_13
     return-void
 .end method
