@@ -3521,6 +3521,17 @@
     invoke-virtual {v2, p0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     :cond_142
+    invoke-virtual {v1, v2, v4}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_14d
+
+    const-string v3, "android.intent.action.VIEW"
+
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    :cond_14d
     return-object v2
 .end method
 

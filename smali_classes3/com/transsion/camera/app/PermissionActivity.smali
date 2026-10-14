@@ -264,6 +264,37 @@
     :cond_12
     new-instance p2, Landroid/content/Intent;
 
+    const-string v0, "android.intent.action.MAIN"
+
+    invoke-direct {p2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "android.intent.category.APP_GALLERY"
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p2, v1}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_32
+
+    const/high16 v0, 0x10000000
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    invoke-static {p0, p2}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
+
+    goto :goto_47
+
+    :cond_32
+    new-instance p2, Landroid/content/Intent;
+
     const-string v0, "market://details?id=com.google.android.apps.photos"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -283,6 +314,7 @@
     invoke-static {p0, p2}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
 
     .line 354
+    :goto_47
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void

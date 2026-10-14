@@ -34,8 +34,9 @@ The stock 16.3.0.140 APK ships four dex files (all `dex.039`); the port adds
 | `DocumentMode.readModel()` reads the bundled model from APK assets | 1 (classes3) |
 | HubSDK bridge (`AssetFallback`, asset-root hookup) | classes5 (new dex) |
 | `FlowBusAdapterFactory.getAdapter` reflective-load guard | 1 (classes dex0) |
+| Gallery hand-off falls back to `ACTION_VIEW` when `com.android.camera.action.REVIEW` is unresolvable | 2 (classes3) |
 
-Delta versus the stock 16.3.0.140 disassembly is exactly those six patched
+Delta versus the stock 16.3.0.140 disassembly is exactly those eight patched
 files across `smali/`, `smali_classes3/` and `smali_classes4/`;
 `smali_classes2/` and `smali_classes5/` are byte-identical to their sources.
 
