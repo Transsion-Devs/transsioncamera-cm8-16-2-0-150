@@ -38,11 +38,17 @@ Confirmed in `pix8.log`: the launched intent was
 
 | File | Change |
 |------|--------|
-| `smali_classes3/com/transsion/camera/app/BaseCameraActivity.smali` | `buildGotoGalleryIntent()`: after the existing package-clear, ask `PackageManager.resolveActivity()` about the finished intent and switch the action to the public `android.intent.action.VIEW` when nothing handles it. The data URI + mime type are already attached, so any installed gallery resolves it. |
-| `smali_classes3/com/transsion/camera/app/PermissionActivity.smali` | `lambda$showGotoInstallGalleryOthers$1()`: the dialog button tries `ACTION_MAIN` + `CATEGORY_APP_GALLERY` first and only falls back to the Play Store listing when no gallery is installed at all. |
+| `smali_classes3/com/transsion/camera/app/BaseCameraActivity.smali` | `buildGotoGalleryIntent()`: after the existing package-clear, probe with `PackageManager.resolveActivity(intent, MATCH_DEFAULT_ONLY)` — the same resolution `startActivity` performs — and when nothing can be launched, clear the intent package and switch the action to the public `android.intent.action.VIEW`. The data URI + mime type are already attached, so any installed gallery resolves it. |
+| `smali_classes3/com/transsion/camera/app/PermissionActivity.smali` | `lambda$showGotoInstallGalleryOthers$1()`: the dialog button probes `ACTION_MAIN` + `CATEGORY_APP_GALLERY` (`MATCH_DEFAULT_ONLY`) first and only falls back to the Play Store listing when no gallery is installed at all. |
 
-The fallback only engages when the stock path is unresolvable, so a present
-`com.gallery20` (or Google Photos handling REVIEW) keeps stock behaviour.
+`MATCH_DEFAULT_ONLY` is load-bearing: with a plain `0` flag `resolveActivity`
+also reports filters that never declare `CATEGORY_DEFAULT`, which `startActivity`
+refuses, so the probe would claim a handler exists exactly when the launch still
+throws. The fallback only engages when the stock path is not launchable, so a
+present `com.gallery20` (or Google Photos handling REVIEW) keeps stock behaviour;
+on the test device `pix7.log`/`pix8.log` show REVIEW resolving to Google Photos
+(`cmp=com.google.android.apps.photos/.pager.HostPhotoPagerActivity`) and
+launching normally, i.e. the fallback stays inactive there.
 
 ## 2. Aux preview freezes (capture session fails with status -22)
 

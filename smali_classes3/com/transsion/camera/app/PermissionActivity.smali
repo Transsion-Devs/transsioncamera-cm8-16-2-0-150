@@ -276,13 +276,13 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    const/high16 v1, 0x10000
 
     invoke-virtual {v0, p2, v1}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_33
 
     const/high16 v0, 0x10000000
 
@@ -290,9 +290,9 @@
 
     invoke-static {p0, p2}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
 
-    goto :goto_47
+    goto :goto_48
 
-    :cond_32
+    :cond_33
     new-instance p2, Landroid/content/Intent;
 
     const-string v0, "market://details?id=com.google.android.apps.photos"
@@ -314,7 +314,7 @@
     invoke-static {p0, p2}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
 
     .line 354
-    :goto_47
+    :goto_48
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
