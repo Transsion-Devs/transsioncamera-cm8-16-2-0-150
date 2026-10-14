@@ -91,3 +91,60 @@ asked for an unsupported 312x418 private stream, `configureStreams` fails
 Both guards are no-ops while `mAuxPreviewWidth/Height` are 0, so devices whose
 aux view size already equals the camera size are unaffected.
 
+## 3. "High Pixel" (SuperDefinition) never resolves its 50MP entry
+
+### Symptom
+
+The `key_super_definition` setting is present and reports
+`supportList = [off, on]` (default `off`), but its UI spec resolves the *default*
+info: `createSupportedEntries` logs `... [off, on] ,mShouldEscape false` and the
+entry arrays are immediately nulled (`getSupportedEntryValues is null, return
+default entry values.`), so the top-bar/pop UI falls back to the app's generic
+`[off, on, billion]` entries — generic and 200MP drawables, no "50MP" hint, and a
+`billion` entry the setting does not support.
+
+### Root cause
+
+`SuperDefinitionSettingUISpec.findSuitableInfo(cameraId, streamIds)`:
+
+1. The lookup key is `streamIds[0]` when present (CM8: `"0"`), and is only
+   replaced by `CameraRepository.getHighDefinitionBackCamera()` /
+   `getHighDefinitionFrontCamera()` when a vendor ships a dedicated
+   high-definition camera (framework ids `"37"`/`"39"`). CM8 exposes ids `0`-`7`
+   only, so both are null and the back camera stays keyed on its stream id.
+2. `CameraDeviceInfo.getLargestSupportedPictureSize(key)` reports 4096x3072 =
+   12.58MP for that camera, which is below the hard-coded 15MP gate, so the
+   method returns `mDefaultInfo` before it ever reaches the `ALL_INFO_MAP` lookup.
+3. `createSupportedEntries()` consequently nulls
+   `mSupportedEntries`/`mSupportedEntryValues`/`mSupportedEntryDrawables`, and
+   `SettingUISpec.getSupportedEntryValues()` hands the UI the generic
+   `super_definition_setting_entry_values` array instead of the device's.
+
+CM8 *is* a 50MP device, it just never reports it in this shape: the stock
+`TranCamera_Overlay` declares `super_definition_back_mp` = `super_definition_front_mp`
+= `50`, and the HAL runs the full-size mode (`(8192x6144)@10 sensorMode:7(CUSTOM7)`),
+while the app caps the user-selectable JPEG list at the 4-in-1 size
+(`PictureSizeParametersConfig.setCameraCapabilities` → `removeSizeLargerThan`).
+The 50MP info is therefore the correct one: `ALL_INFO_MAP[0x32]` carries
+`mOnValue = 50`, `super_definition_50m_off` / `super_definition_50m_on`.
+
+### Patch
+
+`smali_classes4/com/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec.smali`
+— `findSuitableInfo()`: when the computed MP is below the 15MP gate, clamp it to
+`50.0f` (`0x42480000`) and continue into the nearest-info lookup instead of
+returning `mDefaultInfo`. The lookup then resolves `ALL_INFO_MAP[0x32]`, the
+entries are filtered against the setting's real `[off, on]` support list, and the
+UI shows the 50MP off/on drawables plus the "50MP" hint.
+
+The capture path is stock and unchanged: selecting `on` already sets the
+super-definition/remosaic vendor tags
+(`CameraParameters#setSuperDefinitionMode` / `setRemosaicMode`), and
+`SuperDefinition.updateSuperDefinitionValue()` does not force `off` on CM8
+because no dedicated high-definition camera id is reported.
+
+The clamp only triggers when no dedicated high-definition camera exists *and* the
+resolved camera reports <15MP, so devices with the vendor high-definition camera
+(ids `37`/`39`) or with a real >15MP JPEG size keep the stock resolution path.
+
+

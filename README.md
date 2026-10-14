@@ -36,8 +36,9 @@ The stock 16.3.0.140 APK ships four dex files (all `dex.039`); the port adds
 | `FlowBusAdapterFactory.getAdapter` reflective-load guard | 1 (classes dex0) |
 | Gallery hand-off falls back to `ACTION_VIEW` when `com.android.camera.action.REVIEW` is unresolvable | 2 (classes3) |
 | Aux preview re-asserts `setDefaultBufferSize()` after `TextureView` clobbers it | 2 (classes3) |
+| High Pixel (SuperDefinition) UI spec resolves the 50MP info instead of the `<15MP` default | 1 (classes4) |
 
-Delta versus the stock 16.3.0.140 disassembly is exactly those ten patched
+Delta versus the stock 16.3.0.140 disassembly is exactly those eleven patched
 files across `smali/`, `smali_classes3/` and `smali_classes4/`;
 `smali_classes2/` and `smali_classes5/` are byte-identical to their sources.
 

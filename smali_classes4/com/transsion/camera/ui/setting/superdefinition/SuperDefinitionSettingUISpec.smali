@@ -173,7 +173,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_cc
+    if-eqz p1, :cond_cb
 
     .line 275
     invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
@@ -200,33 +200,30 @@
 
     cmpg-float p2, p1, p2
 
-    if-gez p2, :cond_5d
+    if-ltz p2, :cond_5c
 
-    .line 277
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec;->mDefaultInfo:Lcom/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec$Info;
-
-    return-object p0
+    const/high16 p1, 0x42480000    # 50.0f
 
     .line 282
-    :cond_5d
+    :cond_5c
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
 
     iget-boolean p2, p2, Lcom/transsion/camera/utils/CustomConfigUtil;->mReplace50MTo48MIcon:Z
 
-    if-eqz p2, :cond_6c
+    if-eqz p2, :cond_6b
 
     const/high16 p2, 0x42400000    # 48.0f
 
     cmpl-float v0, p1, p2
 
-    if-ltz v0, :cond_6c
+    if-ltz v0, :cond_6b
 
     move p1, p2
 
     .line 288
-    :cond_6c
+    :cond_6b
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec;->ALL_INFO_MAP:Ljava/util/Map;
 
     invoke-interface {p2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -241,13 +238,13 @@
 
     move-object v2, v1
 
-    :cond_79
-    :goto_79
+    :cond_78
+    :goto_78
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_a4
+    if-eqz v3, :cond_a3
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -277,7 +274,7 @@
 
     cmpg-float v6, v5, v0
 
-    if-gez v6, :cond_79
+    if-gez v6, :cond_78
 
     .line 294
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -292,10 +289,10 @@
 
     move v0, v5
 
-    goto :goto_79
+    goto :goto_78
 
     .line 297
-    :cond_a4
+    :cond_a3
     sget-object p2, Lcom/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -328,25 +325,25 @@
 
     move-object v1, v2
 
-    goto :goto_d3
+    goto :goto_d2
 
     .line 299
-    :cond_cc
+    :cond_cb
     sget-object p1, Lcom/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p2, "findSuitableInfo largest is null."
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    :goto_d3
-    if-nez v1, :cond_d8
+    :goto_d2
+    if-nez v1, :cond_d7
 
     .line 302
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec;->mDefaultInfo:Lcom/transsion/camera/ui/setting/superdefinition/SuperDefinitionSettingUISpec$Info;
 
     return-object p0
 
-    :cond_d8
+    :cond_d7
     return-object v1
 .end method
 
