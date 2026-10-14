@@ -42,6 +42,10 @@ Delta versus the stock 16.3.0.140 disassembly is exactly those eleven patched
 files across `smali/`, `smali_classes3/` and `smali_classes4/`;
 `smali_classes2/` and `smali_classes5/` are byte-identical to their sources.
 
+The last three are CM8 runtime fixes (gallery hand-off, aux preview capture
+session, 50MP High Pixel entry); `docs/cm8-runtime-fixes.md` documents their
+root causes, the patches and the on-device verification checklist.
+
 See `docs/reflective-dependency-audit.md` for the full audit of the 96
 externally-referenced `com.transsion.*` names. Short version: the ROM ships no
 Transsion APEX and no `thubutils.jar`, only `AICoreNexusFlow.apk` supplies

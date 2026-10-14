@@ -153,4 +153,37 @@ The clamp only triggers when no dedicated high-definition camera exists *and* th
 resolved camera reports <15MP, so devices with the vendor high-definition camera
 (ids `37`/`39`) or with a real >15MP JPEG size keep the stock resolution path.
 
+## Verification on device
+
+The patched APK is the vendor blob the ROM build picks up
+(`vendor/tecno/CM8/proprietary/system_ext/app/TranssionCamera/TranssionCamera.apk`);
+the build re-signs it with the platform certificate, so compare the *dex*, not
+the APK:
+
+```bash
+adb pull /system_ext/app/TranssionCamera/TranssionCamera.apk /tmp/TranssionCamera.apk
+unzip -p /tmp/TranssionCamera.apk classes3.dex | md5sum   # == artifacts/smali_classes3.dex
+unzip -p /tmp/TranssionCamera.apk classes4.dex | md5sum   # == artifacts/smali_classes4.dex
+```
+
+The expected md5 values are the ones pinned in `CHECKSUMS.md5`. Then, with a
+`adb logcat -d > pix9.log` capture:
+
+| Fix | Expected evidence |
+|-----|-------------------|
+| Gallery hand-off | `CamAp_CameraUtil: isPackageNameEnable NameNotFoundException: com.gallery20` still appears (the CM8 firmware ships no Transsion gallery), but the start is now `act=android.intent.action.VIEW dat=content://media/... typ=image/jpeg` and reaches the installed gallery. No `[gotoGallery] Couldn't view ...` and no `market://details?id=com.google.android.apps.photos` intent. If Google Photos is installed and handles REVIEW, the stock `cmp=com.google.android.apps.photos/.pager.HostPhotoPagerActivity` start is kept — that is expected, not a failure. |
+| Aux preview | In a mode with the aux preview, the capture session logs `Stream{id:1, width:320, height:240 ...}` with no `checkStream unsupported size ...`, no `configureStreams, status=-22` and no `mSession is null in setRepeatingRequest`, and the aux view shows frames. |
+| High Pixel | `SuperDefinitionSettingUISpec` now logs `findSuitableInfo: 50.0 --> 50, ...` (previously the method returned `mDefaultInfo` before reaching that log), the SuperDefinition pop-up lists off/on with the 50MP drawables and hint, and selecting `on` writes the super-definition/remosaic vendor tags on the capture path. `SuperDefinition: initValueAndSupport` keeps `supportList = [off, on]`. |
+
+### Known limitation
+
+The gallery fallback is a *pre-flight* probe, and `gotoGallery()` still shows the
+stock nag when a launchable REVIEW handler exists but fails at launch time (e.g.
+the target app is suspended) — that path throws `SecurityException` from
+`startActivity`, which the probe cannot see. Removing the nag entirely would mean
+retrying `ACTION_VIEW` inside the `gotoGallery()` catch handler, which also has
+to re-arm `mGoingToGallery`/`setGoingToGalleryFlag(true)` for the camera
+lifecycle; that is deliberately left out until a device log shows the probe is
+insufficient.
+
 
