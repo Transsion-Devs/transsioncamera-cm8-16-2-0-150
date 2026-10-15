@@ -50,6 +50,15 @@ on the test device `pix7.log`/`pix8.log` show REVIEW resolving to Google Photos
 (`cmp=com.google.android.apps.photos/.pager.HostPhotoPagerActivity`) and
 launching normally, i.e. the fallback stays inactive there.
 
+The rewrite is guarded by `if-nez v3, :cond_153`, where `v3` is the
+`resolveActivity()` result: a **non-null** result (a launchable REVIEW handler)
+branches past the rewrite and keeps stock behaviour, while a **null** result
+(the unhandled REVIEW action on CM8) falls through to clear the package and set
+`ACTION_VIEW`. Recall `if-eqz` branches when the value is **zero/null** and
+`if-nez` when it is **non-zero**; the guard was first committed as `if-eqz`,
+which skipped the rewrite exactly when it was needed and left the
+`[gotoGallery] Couldn't view` / Play Store nag in place. `if-nez` is correct.
+
 ## 2. Aux preview freezes (capture session fails with status -22)
 
 ### Symptom
@@ -142,6 +151,14 @@ The 50MP info is therefore the correct one: `ALL_INFO_MAP[0x32]` carries
 returning `mDefaultInfo`. The lookup then resolves `ALL_INFO_MAP[0x32]`, the
 entries are filtered against the setting's real `[off, on]` support list, and the
 UI shows the 50MP off/on drawables plus the "50MP" hint.
+
+The gate is `cmpg-float p2, p1, p2` (`p2 = cmp(mp, 15.0f)`) followed by
+`if-gez p2, :cond_5c`. Recall `if-gez` branches when the result is **>= 0**, so
+`mp >= 15` branches past the clamp and `mp < 15` falls through to
+`p1 = 50.0f`. The guard was first committed as `if-ltz` (branch when **< 0**),
+which clamped only for `mp >= 15` and left CM8's 12.58MP on the raw lookup path
+— the first flashed build therefore logged `findSuitableInfo: 12.582912 --> 16`
+instead of `50.0 --> 50`. `if-gez` is the correct polarity.
 
 The capture path is stock and unchanged: selecting `on` already sets the
 super-definition/remosaic vendor tags

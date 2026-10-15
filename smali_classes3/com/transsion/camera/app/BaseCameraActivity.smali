@@ -3527,7 +3527,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_153
+    if-nez v3, :cond_153
 
     const/4 v3, 0x0
 

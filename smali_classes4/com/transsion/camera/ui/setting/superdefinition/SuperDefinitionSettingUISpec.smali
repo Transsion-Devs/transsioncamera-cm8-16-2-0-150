@@ -200,7 +200,7 @@
 
     cmpg-float p2, p1, p2
 
-    if-ltz p2, :cond_5c
+    if-gez p2, :cond_5c
 
     const/high16 p1, 0x42480000    # 50.0f
 
